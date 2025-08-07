@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Secretaria de Assistência Social - Sena Madureira</title>
   <style>
+
+    
     * {
       box-sizing: border-box;
       margin: 0; padding: 0;
@@ -188,6 +190,67 @@
       cursor: pointer;
     }
 
+    .slider {
+  position: relative;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 30px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-height: 150px;
+}
+
+.slide {
+  display: none;
+  animation: fade 1s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.noticia {
+  display: flex;
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  align-items: flex-start;
+}
+
+.noticia img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.conteudo-noticia {
+  flex: 1;
+}
+
+
   </style>
 </head>
 <body>
@@ -202,14 +265,34 @@
 
   <div class="banner"></div>
 
-  <nav>
-    <a href="#sobre" data-tab="sobre" class="nav-link">Sobre</a>
-    <a href="#programas" data-tab="programas" class="nav-link">Programas</a>
-    <a href="#noticias" data-tab="noticias" class="nav-link">Notícias</a>
-    <a href="#contato" data-tab="contato" class="nav-link">Contato</a>
-  </nav>
+<nav>
+  <a href="#sobre" data-tab="sobre" class="nav-link">Sobre</a>
+  <a href="#programas" data-tab="programas" class="nav-link">Programas</a>
+  <a href="#noticias" data-tab="noticias" class="nav-link">Notícias</a>
+  <a href="#videos" data-tab="videos" class="nav-link">Vídeos</a> <!-- NOVA ABA -->
+  <a href="#contato" data-tab="contato" class="nav-link">Contato</a>
+</nav>
+
 
   <main>
+<section id="destaques">
+  <h2>Destaques</h2>
+  <div class="slider">
+    <div class="slide active">
+      <h3>📌 Visita do Criança Feliz</h3>
+      <p>O Programa Criança Feliz esteve no bairro Segundo Distrito e Ana Vieira promovendo ações com as famílias.</p>
+    </div>
+    <div class="slide">
+      <h3>📌 Mutirão do Cadastro Único</h3>
+      <p>Realizamos um grande mutirão de atualização cadastral nas comunidades da zona rural.</p>
+    </div>
+    <div class="slide">
+      <h3>📌 Oficinas do SCFV</h3>
+      <p>As oficinas de música, informática e estética continuam com inscrições abertas no CRAS.</p>
+    </div>
+  </div>
+</section>
+
     <section id="sobre">
       <h2>Sobre a Secretaria</h2>
       <p style="text-align: center;">
@@ -227,19 +310,52 @@
       </ul>
     </section>
 
-    <section id="noticias">
-      <h2>Notícias</h2>
+<section id="videos">
+  <h2>Vídeos do Instagram</h2>
+  <p style="text-align: center;">Acompanhe nossos últimos vídeos publicados no Instagram.</p>
 
-      <div class="noticia">
-        <h3>📌 Criança Feliz realiza visita no Segundo Distrito e Ana Vieira</h3>
-        <p>Na última semana, as equipes do Programa Criança Feliz estiveram presentes nas comunidades do Segundo Distrito e Ana Vieira, promovendo escuta ativa e apoio às famílias acompanhadas.</p>
-      </div>
+  <!-- Exemplo de vídeo do Instagram -->
+  <div style="margin: 20px auto; text-align: center;">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DM_RbK-RKqj/" data-instgrm-version="14" style="background:#FFF; border:0; margin: 1px auto; max-width:540px; width:100%;"></blockquote>
+    <script async src="//www.instagram.com/embed.js"></script>
+  </div>
+</section>
+  <<section id="noticias">
+  <h2>Notícias</h2>
 
-      <div class="noticia">
-        <h3>📌 Mutirão do Cadastro Único na Zona Rural</h3>
-        <p>Está sendo organizado um mutirão para atualização e inclusão de famílias no Cadastro Único nas comunidades rurais de Sena Madureira. Fique atento às datas e locais de atendimento.</p>
-      </div>
-    </section>
+  <div class="noticia">
+    <img src="https://via.placeholder.com/150x100" alt="Criança Feliz">
+    <div class="conteudo-noticia">
+      <h3>📌 Criança Feliz realiza visita no Segundo Distrito e Ana Vieira</h3>
+      <p>Na última semana, as equipes do Programa Criança Feliz estiveram presentes nas comunidades do Segundo Distrito e Ana Vieira, promovendo escuta ativa e apoio às famílias acompanhadas.</p>
+    </div>
+  </div>
+
+  <div class="noticia">
+    <img src="https://via.placeholder.com/150x100" alt="Cadastro Único">
+    <div class="conteudo-noticia">
+      <h3>📌 Mutirão do Cadastro Único</h3>
+      <p>Foi realizado um mutirão para atualização do Cadastro Único em comunidades da zona rural, garantindo o acesso de todos aos programas sociais.</p>
+    </div>
+  </div>
+
+  <div class="noticia">
+    <img src="https://via.placeholder.com/150x100" alt="SCFV Oficinas">
+    <div class="conteudo-noticia">
+      <h3>📌 Oficinas do SCFV abertas</h3>
+      <p>As oficinas de música, informática e estética do SCFV estão com inscrições abertas para jovens de 15 a 17 anos. Participe!</p>
+    </div>
+  </div>
+
+  <div class="noticia">
+    <img src="https://via.placeholder.com/150x100" alt="CRAS atendimento">
+    <div class="conteudo-noticia">
+      <h3>📌 Atendimento do CRAS às famílias</h3>
+      <p>O CRAS realizou atendimento às famílias do bairro Ana Vieira, fortalecendo os vínculos comunitários e a escuta qualificada.</p>
+    </div>
+  </div>
+</section>
+
 
     <section id="contato">
       <h2>Contato</h2>
@@ -261,15 +377,27 @@
       </p>
     </div>
 
+    <div class="sidebar-content" id="content-videos" style="display:none;">
+  <h2>Vídeos</h2>
+  <p>Veja os últimos vídeos publicados no Instagram da Secretaria.</p>
+
+  <div style="margin-top: 20px;">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DM_RbK-RKqj/" data-instgrm-version="14" style="background:#FFF; border:0; margin: 1px auto; max-width:100%; width:100%;"></blockquote>
+    <script async src="//www.instagram.com/embed.js"></script>
+  </div>
+</div>
+
+
     <div class="sidebar-content" id="content-programas" style="display:none;">
-      <h2>Programas e Projetos</h2>
-      <ul>
-        <li>Programa Criança Feliz</li>
-        <li>Cadastro Único e Bolsa Família</li>
-        <li>Serviço de Convivência e Fortalecimento de Vínculos (SCFV)</li>
-        <li>Atendimento pelo CRAS e CREAS de Sena Madureira</li>
-      </ul>
-    </div>
+  <h2>Programas</h2>
+  <ul>
+    <li><a href="https://www.gov.br/mds/pt-br/acoes-e-programas/crianca-feliz" target="_blank">Programa Criança Feliz</a></li>
+    <li><a href="https://www.gov.br/mds/pt-br/acoes-e-programas/cadastro-unico" target="_blank">Cadastro Único e Bolsa Família</a></li>
+    <li><a href="https://www.gov.br/mds/pt-br/acoes-e-programas/servico-de-convivencia-e-fortalecimento-de-vinculos" target="_blank">Serviço de Convivência e Fortalecimento de Vínculos (SCFV)</a></li>
+    <li><a href="https://www.gov.br/mds/pt-br/acoes-e-programas/assistencia-social/cras-e-creas" target="_blank">Atendimento pelo CRAS e CREAS de Sena Madureira</a></li>
+  </ul>
+</div>
+
 
     <div class="sidebar-content" id="content-noticias" style="display:none;">
       <h2>Notícias</h2>
@@ -336,5 +464,26 @@
       });
     });
   </script>
+
+  <script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlides() {
+    slides.forEach((slide, index) => {
+      slide.classList.remove('active');
+    });
+
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add('active');
+  }
+
+  // Primeira exibição
+  slides[slideIndex].classList.add('active');
+
+  // Trocar a cada 5 segundos
+  setInterval(showSlides, 5000);
+</script>
+
 </body>
 </html>
