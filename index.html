@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Secretaria de Assistência Social - Sena Madureira</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 30px 20px 10px;
+      text-align: center;
+    }
+
+    .logo {
+      margin-top: 15px;
+    }
+
+    .logo img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+
+    nav {
+      background-color: #036;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 15px 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 20px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .banner {
+      background: url('https://via.placeholder.com/1200x300') no-repeat center center/cover;
+      height: 300px;
+      margin-bottom: 20px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #004aad;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      clear: both;
+    }
+
+    .noticia {
+      background-color: #f8f8f8;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .noticia:hover {
+      background-color: #eaeaea;
+    }
+
+    .noticia h3 {
+      margin-bottom: 5px;
+    }
+
+    .noticia p {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 8px 0;
+      }
+
+      .banner {
+        height: 200px;
+      }
+
+      .logo img {
+        max-width: 90%;
+      }
+    }
+
+    /* === ABA LATERAL SOBREPOSTA === */
+    #sidebar {
+      height: 100vh;
+      width: 320px;
+      position: fixed;
+      top: 0;
+      right: -320px; /* inicialmente fora da tela */
+      background-color: #004aad;
+      color: white;
+      overflow-y: auto;
+      padding: 20px;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.4);
+      transition: right 0.3s ease;
+      z-index: 9999;
+    }
+
+    #sidebar.active {
+      right: 0;
+    }
+
+    #sidebar h2 {
+      margin-bottom: 20px;
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 10px;
+    }
+
+    #sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #sidebar ul li {
+      padding: 10px 5px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      cursor: default;
+    }
+
+    #sidebar ul li:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    #closeSidebarBtn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Secretaria Municipal de Assistência Social</h1>
+    <p>Sena Madureira - Acre</p>
+    <div class="logo">
+      <img src="LOGO SEMAS contorno (1).png" alt="Logo SEMAS" />
+    </div>
+  </header>
+
+  <div class="banner"></div>
+
+  <nav>
+    <a href="#sobre" data-tab="sobre" class="nav-link">Sobre</a>
+    <a href="#programas" data-tab="programas" class="nav-link">Programas</a>
+    <a href="#noticias" data-tab="noticias" class="nav-link">Notícias</a>
+    <a href="#contato" data-tab="contato" class="nav-link">Contato</a>
+  </nav>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre a Secretaria</h2>
+      <p style="text-align: center;">
+        A Secretaria Municipal de Assistência Social de Sena Madureira promove ações de proteção social, fortalecimento de vínculos e garantia de direitos para a população em situação de vulnerabilidade.
+      </p>
+    </section>
+
+    <section id="programas">
+      <h2>Programas e Projetos</h2>
+      <ul>
+        <li>Programa Criança Feliz</li>
+        <li>Cadastro Único e Bolsa Família</li>
+        <li>Serviço de Convivência e Fortalecimento de Vínculos (SCFV)</li>
+        <li>Atendimento pelo CRAS e CREAS de Sena Madureira</li>
+      </ul>
+    </section>
+
+    <section id="noticias">
+      <h2>Notícias</h2>
+
+      <div class="noticia">
+        <h3>📌 Criança Feliz realiza visita no Segundo Distrito e Ana Vieira</h3>
+        <p>Na última semana, as equipes do Programa Criança Feliz estiveram presentes nas comunidades do Segundo Distrito e Ana Vieira, promovendo escuta ativa e apoio às famílias acompanhadas.</p>
+      </div>
+
+      <div class="noticia">
+        <h3>📌 Mutirão do Cadastro Único na Zona Rural</h3>
+        <p>Está sendo organizado um mutirão para atualização e inclusão de famílias no Cadastro Único nas comunidades rurais de Sena Madureira. Fique atento às datas e locais de atendimento.</p>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p style="text-align: center;">
+        <strong>Endereço:</strong> Rua Principal, nº 100 - Centro, Sena Madureira - AC<br>
+        <strong>Telefone:</strong> (68) 99999-0000<br>
+        <strong>Email:</strong> social@sena.ac.gov.br
+      </p>
+    </section>
+  </main>
+
+  <aside id="sidebar" aria-label="Aba lateral de conteúdo">
+    <button id="closeSidebarBtn" aria-label="Fechar aba lateral">&times;</button>
+
+    <div class="sidebar-content" id="content-sobre" style="display:none;">
+      <h2>Sobre a Secretaria</h2>
+      <p>
+        Aqui está uma versão resumida ou destaque do conteúdo da seção Sobre.
+      </p>
+    </div>
+
+    <div class="sidebar-content" id="content-programas" style="display:none;">
+      <h2>Programas e Projetos</h2>
+      <ul>
+        <li>Programa Criança Feliz</li>
+        <li>Cadastro Único e Bolsa Família</li>
+        <li>Serviço de Convivência e Fortalecimento de Vínculos (SCFV)</li>
+        <li>Atendimento pelo CRAS e CREAS de Sena Madureira</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-content" id="content-noticias" style="display:none;">
+      <h2>Notícias</h2>
+
+      <div class="noticia" style="color: black;">
+  <h3>📌 Criança Feliz realiza visita no Segundo Distrito e Ana Vieira</h3>
+  <p>Na última semana, as equipes do Programa Criança Feliz estiveram presentes nas comunidades do Segundo Distrito e Ana Vieira, promovendo escuta ativa e apoio às famílias acompanhadas.</p>
+</div>
+
+
+      <div class="noticia">
+        <h3>📌 Mutirão do Cadastro Único na Zona Rural</h3>
+        <p>Está sendo organizado um mutirão para atualização e inclusão de famílias no Cadastro Único nas comunidades rurais de Sena Madureira. Fique atento às datas e locais de atendimento.</p>
+      </div>
+    </div>
+
+    <div class="sidebar-content" id="content-contato" style="display:none;">
+      <h2>Contato</h2>
+      <p>
+        <strong>Endereço:</strong> Rua Principal, nº 100 - Centro, Sena Madureira - AC<br>
+        <strong>Telefone:</strong> (68) 99999-0000<br>
+        <strong>Email:</strong> social@sena.ac.gov.br
+      </p>
+    </div>
+  </aside>
+
+  <footer>
+    <p>&copy; 2025 Secretaria Municipal de Assistência Social - Sena Madureira/AC</p>
+  </footer>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sidebarContents = document.querySelectorAll('.sidebar-content');
+
+    function openSidebarWithContent(tab) {
+      sidebarContents.forEach(content => {
+        content.style.display = content.id === `content-${tab}` ? 'block' : 'none';
+      });
+
+      sidebar.classList.add('active');
+      sidebar.focus();
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const tab = link.getAttribute('data-tab');
+        openSidebarWithContent(tab);
+      });
+    });
+
+    closeSidebarBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+    });
+
+    // Funcionalidade de abrir/fechar texto das notícias
+    const noticias = document.querySelectorAll('.noticia');
+    noticias.forEach(noticia => {
+      noticia.addEventListener('click', () => {
+        const p = noticia.querySelector('p');
+        p.style.display = p.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
