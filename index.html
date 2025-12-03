@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ - Assistência Social</title>
+<style>
+body { 
+  font-family: Arial; 
+  margin: 20px; 
+  text-align: center; /* Centraliza tudo que não tiver alinhamento próprio */
+}
+
+/* Centraliza apenas o botão */
+.section-btn {
+  background: #0077cc;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px auto;
+  width: fit-content;
+  text-align: center;
+}
+
+.faq { 
+  margin-bottom: 15px; 
+  text-align: left;   /* Para manter as perguntas alinhadas à esquerda */
+  max-width: 600px;   /* Deixa o bloco mais bonito */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.question { 
+  background: #f1f1f1; 
+  padding: 10px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+}
+
+.answer { 
+  display: none; 
+  padding: 10px; 
+  border-left: 3px solid #0077cc; 
+}
+</style>
+
+<script>
+function toggle(id) {
+  var x = document.getElementById(id);
+  x.style.display = x.style.display === "block" ? "none" : "block";
+}
+</script>
+</head>
+<body>
+
+<h2>FAQ – Assistência Social</h2>
+
+<!-- BOTÃO / ABA -->
+<div class="section-btn" onclick="toggle('bolsaSection')">
+  Programa Bolsa Família
+</div>
+
+<!-- SEÇÃO -->
+<div id="bolsaSection" style="display:none;">
+
+  <div class="faq">
+    <div class="question" onclick="toggle('a1')">
+      Como faço para solicitar o Cadastro Único?
+    </div>
+    <div class="answer" id="a1">
+      Dirija-se ao CRAS mais próximo com documento de identificação e comprovante de residência.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question" onclick="toggle('a2')">
+      Quem tem direito ao Bolsa Família?
+    </div>
+    <div class="answer" id="a2">
+      Famílias com renda por pessoa de até R$ 218, inscritas no Cadastro Único.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question" onclick="toggle('a3')">
+      Como faço para entrar no Bolsa Família?
+    </div>
+    <div class="answer" id="a3">
+      É necessário estar inscrito e com os dados atualizados no CadÚnico.  
+      A seleção é automática pelo Governo Federal.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question" onclick="toggle('a4')">
+      Tenho que atualizar o CadÚnico todo ano?
+    </div>
+    <div class="answer" id="a4">
+      A atualização deve ser feita a cada 2 anos ou quando houver mudanças na família.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question" onclick="toggle('a5')">
+      Por que meu Bolsa Família foi bloqueado?
+    </div>
+    <div class="answer" id="a5">
+      Motivos comuns: falta de atualização, inconsistências de renda ou condicionalidades não cumpridas.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question" onclick="toggle('a6')">
+      Onde recebo o pagamento do Bolsa Família?
+    </div>
+    <div class="answer" id="a6">
+      Caixa Econômica Federal via conta digital, Poupança Social ou Caixa Tem.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question" onclick="toggle('a7')">
+      Como consultar o valor do meu benefício?
+    </div>
+    <div class="answer" id="a7">
+      Aplicativo Bolsa Família, Caixa Tem, telefone 111 ou site da Caixa.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question" onclick="toggle('a8')">
+      O Bolsa Família pode ser acumulado com outros benefícios?
+    </div>
+    <div class="answer" id="a8">
+      Pode com o BPC; não pode com benefícios temporários que ultrapassem o limite de renda.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
